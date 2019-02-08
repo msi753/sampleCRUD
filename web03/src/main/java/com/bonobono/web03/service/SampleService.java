@@ -21,12 +21,15 @@ public class SampleService {
 		return null;		
 	}	
 	public int addSample(Sample sample) {
-		return 0;		
+		int result = 0;
+		result = sampleMapper.insertSample(sample);
+		System.out.println(result + " <-result");
+		return result;		
 	}	
 	public int removeSample(Sample sample) {
-		return 0;		
+		return 1;		
 	}	
 	public int modifySample(Sample sample) {
-		return 0;		
+		return 1;		
 	}
 }

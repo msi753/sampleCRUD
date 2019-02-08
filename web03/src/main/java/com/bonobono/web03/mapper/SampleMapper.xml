@@ -13,25 +13,34 @@
 	
 	<!-- 하나를 셀렉트하는 쿼리문 -->
 	<select id="selectSampleOne" resultType="com.bonobono.web03.vo.Sample">
+		SELECT
+			sample_id as sampleId,
+			sample_name as sampleName
+		FROM sample
+		WHERE sample_id = #{sampleId}
 	</select>
 	
 	<!-- 인서트하는 쿼리문 -->
-	<select id="insertSample" parameterType="com.bonobono.web03.vo.Sample">
+	<insert id="insertSample" parameterType="com.bonobono.web03.vo.Sample">
 							<!-- 인서트하면 파라미터타입이 필요하다 -->
 		<!-- 원래 썼었던 쿼리문 INSERT INTO 테이블명(컬럼명1, 컬럼명2) VALUES (?, ?) -->
 		INSERT INTO sample(
-				sample_name
+				sample_name 
 			) VALUES (
 				#{sampleName}
 			)
-	</select>
+	</insert>
 	
 	<!-- 딜리트하는 쿼리문 -->
 	<delete id="deleteSample" parameterType="com.bonobono.web03.vo.Sample">
+		DELETE FROM sample 
+		WHERE sample_id = #{sampleId}
 	</delete>
 	
 	<!-- 업데이트하는 쿼리문 -->
 	<update id="updateSample" parameterType="com.bonobono.web03.vo.Sample">
+		UPDATE sample
+		
 	</update>
 	
 </mapper>
