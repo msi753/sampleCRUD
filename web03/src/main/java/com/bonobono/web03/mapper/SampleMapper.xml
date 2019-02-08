@@ -1,0 +1,37 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bonobono.web03.mapper.SampleMapper">
+	<!-- 리스트를 셀렉트하는 쿼리문 -->
+	<select id="sampleList" resultType="com.bonobono.web03.vo.Sample">
+							<!-- 셀렉트하면 배열로 리턴값이 있고, <>안에 들어갈 리턴타입을 적어준다 -->
+		SELECT
+			sample_id as sampleId,
+			sample_name as sampleName
+		FROM sample
+	</select>
+	
+	<!-- 하나를 셀렉트하는 쿼리문 -->
+	<select id="selectSampleOne" resultType="com.bonobono.web03.vo.Sample">
+	</select>
+	
+	<!-- 인서트하는 쿼리문 -->
+	<select id="insertSample" parameterType="com.bonobono.web03.vo.Sample">
+							<!-- 인서트하면 파라미터타입이 필요하다 -->
+		<!-- 원래 썼었던 쿼리문 INSERT INTO 테이블명(컬럼명1, 컬럼명2) VALUES (?, ?) -->
+		INSERT INTO sample(
+				sample_name
+			) VALUES (
+				#{sampleName}
+			)
+	</select>
+	
+	<!-- 딜리트하는 쿼리문 -->
+	<delete id="deleteSample" parameterType="com.bonobono.web03.vo.Sample">
+	</delete>
+	
+	<!-- 업데이트하는 쿼리문 -->
+	<update id="updateSample" parameterType="com.bonobono.web03.vo.Sample">
+	</update>
+	
+</mapper>
