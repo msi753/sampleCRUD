@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
-목록
+	<table border="1">
+		<tr>
+			<td>sampleId</td>
+			<td>sampleName</td>
+		</tr>
+		<tr th:each="s : ${listSample}">
+			<td th:text="${s.sampleId}"></td>
+			<td th:text="${s.sampleName}"></td>
+		</tr>		
+	</table>
 </body>
 </html>

@@ -1,5 +1,7 @@
 package com.bonobono.web03.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,11 +36,18 @@ public class SampleController {
 	//3. 목록
 	@GetMapping("/sampleList")
 	public String sampleList(Model model) {		//set.attribute 대신 Model
-		model.addAttribute("", model);
+		List<Sample> listSample = sampleService.getSampleList();
+		model.addAttribute("listSample", listSample);
 		return "sampleList";
 	}
 	//4. 삭제 액션
-	
+	@GetMapping("/removeSample")
+	public String removeSample(@RequestParam(value="sampleId") String sampleId) {
+		Sample sample = new Sample();
+		sample.setSampleName(sampleId);
+		sampleService.removeSample(sample);
+		return "sampleList";
+	}
 	//5. 수정 폼
 	
 	//6. 수정 액션

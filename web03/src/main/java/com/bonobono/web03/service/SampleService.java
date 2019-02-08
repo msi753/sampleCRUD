@@ -15,7 +15,8 @@ public class SampleService {
 	private SampleMapper sampleMapper;
 	
 	public List<Sample> getSampleList() {
-		return null;		
+		List<Sample> listSample = sampleMapper.sampleList();
+		return listSample;		
 	}
 	public List<Sample> getSampleOne() {
 		return null;		
@@ -27,7 +28,10 @@ public class SampleService {
 		return result;		
 	}	
 	public int removeSample(Sample sample) {
-		return 1;		
+		int result = 0;
+		result = sampleMapper.deleteSample(sample);
+		System.out.println(result + " <-result");
+		return result;		
 	}	
 	public int modifySample(Sample sample) {
 		return 1;		
