@@ -39,3 +39,4 @@ public class SampleService {
 		//update쿼리문을 실행한 후 결과를 리턴한다(성공:1, 실패:0)
 	}
 }
+

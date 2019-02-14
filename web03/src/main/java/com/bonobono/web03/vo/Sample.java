@@ -20,3 +20,4 @@ public class Sample {
 		return "Sample [sampleId=" + sampleId + ", sampleName=" + sampleName + "]";
 	}
 }
+

@@ -19,3 +19,4 @@ public interface SampleMapper {
 	//sample객체에 담긴 값을 업데이트하는 메서드
 	int updateSample(Sample sample);
 }
+
