@@ -6,10 +6,14 @@
 		<tr>
 			<td>sampleId</td>
 			<td>sampleName</td>
+			<td>수정</td>
+			<td>삭제</td>
 		</tr>
 		<tr th:each="s : ${listSample}">
 			<td th:text="${s.sampleId}"></td>
 			<td th:text="${s.sampleName}"></td>
+			<td><a th:href="@{/modifySample(sampleId=${s.sampleId})}" th:text="수정"></a></td>
+			<td><a th:href="@{/removeSample(sampleId=${s.sampleId})}" th:text="삭제"></a></td>
 		</tr>		
 	</table>
 </body>

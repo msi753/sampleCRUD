@@ -18,22 +18,24 @@ public class SampleService {
 		List<Sample> listSample = sampleMapper.sampleList();
 		return listSample;		
 	}
-	public List<Sample> getSampleOne() {
-		return null;		
-	}	
-	public int addSample(Sample sample) {
+	public Sample selectSampleOne(int sampleId) {
+		Sample sample = sampleMapper.selectSampleOne(sampleId);
+		return sample;	
+		}	
+	public int addSample(String sampleName) {
 		int result = 0;
-		result = sampleMapper.insertSample(sample);
+		result = sampleMapper.insertSample(sampleName);
 		System.out.println(result + " <-result");
 		return result;		
 	}	
-	public int removeSample(Sample sample) {
+	public int removeSample(int sampleId) {
 		int result = 0;
-		result = sampleMapper.deleteSample(sample);
+		result = sampleMapper.deleteSample(sampleId);
 		System.out.println(result + " <-result");
 		return result;		
 	}	
 	public int modifySample(Sample sample) {
-		return 1;		
+		return sampleMapper.updateSample(sample);
+		//update쿼리문을 실행한 후 결과를 리턴한다(성공:1, 실패:0)
 	}
 }

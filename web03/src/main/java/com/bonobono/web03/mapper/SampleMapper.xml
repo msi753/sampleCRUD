@@ -40,7 +40,8 @@
 	<!-- 업데이트하는 쿼리문 -->
 	<update id="updateSample" parameterType="com.bonobono.web03.vo.Sample">
 		UPDATE sample
-		
+		SET sample_name = #{sampleName}		
+		WHERE sample_id = #{sampleId}	
 	</update>
 	
 </mapper>
